@@ -398,6 +398,7 @@ function matchesRestriction(files, fileRestriction) {
 		if (typeof file === 'string') {
 			matches |= (file === fileRestriction);
 		} else if (typeof file === 'object') {
+			delete file.platform;
 			matches |= matchesRestriction(file, fileRestriction);
 		} else {
 			throw new Exception('unsupported file type ' + typeof file)
