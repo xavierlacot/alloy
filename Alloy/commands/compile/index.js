@@ -400,7 +400,7 @@ function matchesRestriction(files, fileRestriction) {
 		} else if (typeof file === 'object') {
 			matches |= matchesRestriction(file, fileRestriction);
 		} else {
-			throw new Exception('unsupported file type ' + typeof file)
+			throw 'unsupported file type ' + typeof file;
 		}
 	});
 
